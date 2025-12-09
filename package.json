@@ -1,0 +1,24 @@
+{
+  "name": "web-vitals-monitor",
+  "version": "1.0.0",
+  "description": "Real-time Core Web Vitals monitoring browser extension for Chrome and Firefox",
+  "scripts": {
+    "build": "zip -r web-vitals-monitor.zip . -x '*.git*' 'node_modules/*' '.DS_Store' '*.log'",
+    "test": "echo 'No tests configured yet'",
+    "lint": "echo 'No linter configured yet'"
+  },
+  "keywords": [
+    "web-vitals",
+    "core-web-vitals",
+    "performance",
+    "monitoring",
+    "chrome-extension",
+    "firefox-addon",
+    "lcp",
+    "fid",
+    "cls",
+    "inp"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Vitals Monitor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Web Vitals Monitor</h1>
+      <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
+    </div>
+
+    <div class="metrics-grid">
+      <!-- LCP -->
+      <div class="metric-card">
+        <div class="metric-label">LCP</div>
+        <div class="metric-value" id="lcpValue">—</div>
+        <div class="metric-status" id="lcpStatus">Measuring...</div>
+        <div class="metric-info">Largest Contentful Paint</div>
+      </div>
+
+      <!-- FID -->
+      <div class="metric-card">
+        <div class="metric-label">FID</div>
+        <div class="metric-value" id="fidValue">—</div>
+        <div class="metric-status" id="fidStatus">Measuring...</div>
+        <div class="metric-info">First Input Delay</div>
+      </div>
+
+      <!-- CLS -->
+      <div class="metric-card">
+        <div class="metric-label">CLS</div>
+        <div class="metric-value" id="clsValue">—</div>
+        <div class="metric-status" id="clsStatus">Measuring...</div>
+        <div class="metric-info">Cumulative Layout Shift</div>
+      </div>
+
+      <!-- INP -->
+      <div class="metric-card">
+        <div class="metric-label">INP</div>
+        <div class="metric-value" id="inpValue">—</div>
+        <div class="metric-status" id="inpStatus">Measuring...</div>
+        <div class="metric-info">Interaction to Next Paint</div>
+      </div>
+    </div>
+
+    <div class="additional-metrics">
+      <h3>Additional Metrics</h3>
+      <div class="metric-row">
+        <span class="metric-name">TTFB</span>
+        <span class="metric-value" id="ttfbValue">—</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-name">FCP</span>
+        <span class="metric-value" id="fcpValue">—</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-name">DCL</span>
+        <span class="metric-value" id="dclValue">—</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-name">Load</span>
+        <span class="metric-value" id="loadValue">—</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="dashboardBtn" class="btn btn-primary">📊 Dashboard</button>
+      <button id="exportBtn" class="btn btn-secondary">📥 Export</button>
+    </div>
+
+    <div class="footer">
+      <a href="#" id="docsLink">Documentation</a>
+      <span class="version">v1.0.0</span>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settingsModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Settings</h2>
+        <button id="closeSettingsBtn" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <label class="setting-item">
+          <input type="checkbox" id="autoExportToggle">
+          <span>Auto-export metrics</span>
+        </label>
+        <label class="setting-item">
+          <input type="checkbox" id="notificationsToggle" checked>
+          <span>Show notifications</span>
+        </label>
+        <label class="setting-item">
+          <input type="checkbox" id="darkModeToggle">
+          <span>Dark mode</span>
+        </label>
+        <div class="setting-item">
+          <label for="thresholdLcp">LCP Threshold (ms)</label>
+          <input type="number" id="thresholdLcp" value="2500" min="0">
+        </div>
+        <div class="setting-item">
+          <label for="thresholdCls">CLS Threshold</label>
+          <input type="number" id="thresholdCls" value="0.1" min="0" step="0.01">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="resetSettingsBtn" class="btn btn-secondary">Reset</button>
+        <button id="saveSettingsBtn" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
